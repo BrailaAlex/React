@@ -5,9 +5,9 @@ import './index.css';
 const rootElem = document.querySelector('#root');
 
 const elem = ( <
-    div className = "title" >
+    h1 className = "title" >
     Todo List <
-    /div>
+    /h1>
 );
 
 ReactDOM.render(elem, rootElem)
