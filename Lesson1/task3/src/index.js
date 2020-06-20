@@ -11,6 +11,5 @@ const element = ( <
     div className = "greeting__text" > I 'm learning React</div> < /
     div >
 );
-console.log(element);
 
 ReactDOM.render(element, rootElement);
