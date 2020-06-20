@@ -1,7 +1,13 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const path = require('path');
 
 module.exports = {
     module: {
+        // entry: './src/index.js',
+        // output: {
+        //     filename: '[name].js',
+        //     path: path.resolve(__dirname, 'review_build')
+        // },
         rules: [{
                 test: /.css$/,
                 use: ["style-loader", "css-loader"]
