@@ -1,13 +1,13 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const path = require('path');
+const webpack = require("webpack");
 
 module.exports = {
+    entry: "./index.js",
+    output: {
+        path: __dirname + '/review_build',
+        filename: "bundle.js"
+    },
     module: {
-        // entry: './src/index.js',
-        // output: {
-        //     filename: '[name].js',
-        //     path: path.resolve(__dirname, 'review_build')
-        // },
         rules: [{
                 test: /.css$/,
                 use: ["style-loader", "css-loader"]
@@ -16,11 +16,11 @@ module.exports = {
                 test: /.js$/,
                 use: ["babel-loader"]
             }
-        ]
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/index.html"
+            template: "./index.html"
         })
     ]
-};
+}
