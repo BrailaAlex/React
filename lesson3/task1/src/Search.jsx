@@ -1,6 +1,6 @@
 import React from "react";
 
-export default (props)  {
+export default (props) =>  {
 	return (
   <div className='Search'>
     <h1 className='search__title'>
