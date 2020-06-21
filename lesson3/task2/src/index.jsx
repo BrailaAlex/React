@@ -24,7 +24,7 @@ const rootElem = document.querySelector("#root");
 
 // ReactDOM.render(<Greeting name='Bob' age={17} />, rootElem);
 
-class SearchField extends Component {
+export default class Search extends Component {
   render() {
     console.log(this.props);
     return (
@@ -43,5 +43,5 @@ class SearchField extends Component {
 }
 }
 
-ReactDOM.render(<SearchField name = "Bob" />, rootElem);
+ReactDOM.render(<Search name = "Bob" />, rootElem);
 
