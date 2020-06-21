@@ -3,8 +3,10 @@
     "editor.formatOnType": true,
     "editor.minimap.maxColumn": 80,
     "prettier.jsxBracketSameLine": true,
-    "prettier.resolveGlobalModules": true,
     "eslint.format.enable": true,
     "editor.formatOnSave": true,
-    "editor.formatOnPaste": true
+    "editor.formatOnPaste": true,
+    "prettier.insertPragma": true,
+    "prettier.requireConfig": true,
+    "prettier.withNodeModules": true
 }
