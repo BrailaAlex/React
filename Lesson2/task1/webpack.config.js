@@ -1,25 +1,27 @@
+//webpack.congig.js
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
     entry: "./src/index.js",
     output: {
-        path: __dirname + '/review_build',
+        filename: "bundle.js"
     },
     module: {
-        rules: [{
-                test: /.css$/,
-                use: ["style-loader", "css-loader"]
-            },
+        rules: [
             {
                 test: /.js$/,
                 use: ["babel-loader"]
             }
-        ],
+        ]
     },
     plugins: [
+        new webpack.ProgressPlugin(),
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: "./src/index.html"
         })
     ]
-}
+};
