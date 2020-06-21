@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 
 const rootElem = document.querySelector("#root");
 
-const Greeting = (props) => {
+export default const Search = (props) => {
 	return (
   <div className='Search'>
     <h1 className='search__title'>
@@ -22,5 +22,5 @@ const Greeting = (props) => {
 	);
 };
 
-ReactDOM.render(<Greeting name='Bob' age={17} />, rootElem);
+ReactDOM.render(<Search name='Bob' age={17} />, rootElem);
 
