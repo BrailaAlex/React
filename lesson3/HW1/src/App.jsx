@@ -12,7 +12,7 @@ const App = () => {
     <Greeting
       firstName = 'John'
       lastName = 'Doe'
-      birthDate =  {new Date('2020-07-22T14:11:11.819Z')}
+      birthDate =  {new Date('2000-01-01')}
     />
   )
 }
