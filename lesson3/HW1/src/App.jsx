@@ -10,7 +10,9 @@ const userInfo = {
 const App = () => {
   return (
     <Greeting
-      user = {userInfo} 
+      firstName = {userInfo.firstName}
+      lastName = {userInfo.lastName}
+      birthDate =  {userInfo.birthDate}
     />
   )
 }
