@@ -3,10 +3,13 @@
     "editor.formatOnType": true,
     "editor.minimap.maxColumn": 80,
     "prettier.jsxBracketSameLine": true,
-    "eslint.format.enable": true,
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "prettier.insertPragma": true,
     "prettier.requireConfig": true,
-    "prettier.withNodeModules": true
+    "prettier.withNodeModules": true,
+    "json.format.enable": false,
+    "html.format.enable": false,
+    "typescript.format.enable": false,
+    "javascript.format.enable": false
 }
