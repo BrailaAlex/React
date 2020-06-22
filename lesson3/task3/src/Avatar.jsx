@@ -1,13 +1,7 @@
-import React from 'react';
-const Avatar = (props) => {
-    console.log(props);
-    return(
-        <img
-            className ="avatar"
-            src = {props.avatarUrl}
-            name ={props.name}
-        />
-    )
+import React from "react";
+
+function Avatar(props) {
+  return <img className="avatar" src={props.avatarUrl} alt={props.name} />;
 }
 
 export default Avatar;
