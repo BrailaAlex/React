@@ -5,10 +5,11 @@ const Greeting = (props) => {
   return (
     <div className="greeting">
     {`My name is ${props.firstName} ${props.lastName}. 
-    I'm ${moment()
-  .diff(moment(props.birthDate), 'Years')} years old`}
+    I'm ${props.birthDate} years old`}
     </div>
   )
 }
+// moment()
+//   .diff(moment(props.birthDate), 'Years')
 
 export default Greeting;
