@@ -2,7 +2,7 @@ import React from "react";
 import age from "./age";
 
 const Greeting = (props) => {
-  console.log(props);
+  // console.log(props);
   const fullYears = age(props.birthDate);
   // console.log(fullYears);
   return (
