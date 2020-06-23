@@ -2,9 +2,18 @@ import React, {Component} from "react";
 import "./clock.scss"
 import moment from "moment";
 
-const setOffset = offset => moment()
-  .utcOffset(offset)
-  .format("h:mm:ss a");
+// const setOffset = offset => moment()
+//   .utcOffset(offset)
+//   .format("h:mm:ss a");
+
+const setOffset = offset => {
+  const currentTime = new Date();
+  const utcOffset = currentTime.getTimezoneOffset()/60;
+  debugger;
+  return new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset))
+  .toLocaleTimeString();
+}
+debugger;
 
 class Clock extends Component {
   constructor(props) {
