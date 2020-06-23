@@ -10,8 +10,7 @@ const setOffset = offset => {
   const currentTime = new Date();
   const utcOffset = currentTime.getTimezoneOffset()/60;
   debugger;
-  return new Date(currentTime.setHours(currentTime.getHours() + offset + 1 + utcOffset))
-  .toLocaleTimeString();
+  return new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset));
 }
 debugger;
 
@@ -24,7 +23,7 @@ class Clock extends Component {
 
     setInterval(() => {
       this.setState({
-        timeZone: setOffset(props.offset)
+        timeZone: setOffset(props.offset).toLocaleTimeString()
       });
     }, 1000);
   }
