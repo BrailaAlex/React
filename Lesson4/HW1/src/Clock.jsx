@@ -18,7 +18,7 @@ class Clock extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      timeZone: null
+      timeZone: 0
     };
 
     setInterval(() => {
