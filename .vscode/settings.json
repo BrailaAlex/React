@@ -7,9 +7,5 @@
     "editor.formatOnPaste": true,
     "prettier.insertPragma": true,
     "prettier.requireConfig": true,
-    "prettier.withNodeModules": true,
-    "json.format.enable": false,
-    "html.format.enable": false,
-    "typescript.format.enable": false,
-    "javascript.format.enable": false
+    "prettier.withNodeModules": true
 }
