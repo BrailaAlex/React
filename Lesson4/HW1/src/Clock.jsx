@@ -10,7 +10,7 @@ const setOffset = offset => {
   const currentTime = new Date();
   const utcOffset = currentTime.getTimezoneOffset()/60;
   debugger;
-  return new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset))
+  return new Date(currentTime.setHours(currentTime.getHours() + offset + 1 + utcOffset))
   .toLocaleTimeString();
 }
 debugger;
