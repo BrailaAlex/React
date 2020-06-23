@@ -6,9 +6,9 @@ const BLUE = '#00f';
 
 class Colors extends React.Component {
 
-  setBodyColor = (color, e) => {
+  setBodyColor = (color) => {
     document.body.style.background = color;
-    console.log(e)
+    // console.log(e)
   }
   render() {
     return (
