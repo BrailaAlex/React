@@ -18,7 +18,8 @@ class Clock extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      timeZone: 0
+      timeZone: setOffset(props.offset).toLocaleTimeString(),
+      location: props.location
     };
 
     setInterval(() => {
@@ -32,7 +33,7 @@ class Clock extends Component {
     return (
       <div className = "clock">
         <div className="clock__location">
-        {this.props.location}
+        {this.state.location}
         </div>
         <div className="clock__time">
         {this.state.timeZone}
