@@ -6,4 +6,4 @@ import Mailbox from "./Mailbox";
 const rootElem = document.querySelector("#root");
 
 
-ReactDOM.render(<Mailbox unreadMessages={[1, 3, 5]} />, rootElem);
+ReactDOM.render(<Mailbox unreadMessages={[1, 3]} />, rootElem);
