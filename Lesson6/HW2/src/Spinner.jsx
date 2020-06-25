@@ -1,9 +1,9 @@
 import React from "react";
 
-const Spinner = ({ spinnerSize }) => {
+const Spinner = ({ size }) => {
   const style = {
-    width: `${spinnerSize}px`,
-    height: `${spinnerSize}px`
+    width: `${size}px`,
+    height: `${size}px`
   };
   return (
     <span style={style}
