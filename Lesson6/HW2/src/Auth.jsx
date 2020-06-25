@@ -5,14 +5,18 @@ import Spinner from "./Spinner";
 
 
 class Auth extends React.Component {
-  state = {
+  constructor(props) {
+    super(props);
+    this.state = {
     isLoggedIn: false,
     turnSpinner: false
   }
+  }
+  
 
   handleLogin = () => {
     this.setState({
-        turnSpinner: true
+      turnSpinner: true
       })
     setTimeout(() => {
       this.setState({
@@ -29,12 +33,6 @@ class Auth extends React.Component {
   }
 
   render() {
-
-    // const loggerContent = this.state.isLoggedIn
-    //   ? <Logout onlogout={this.handleLogout} />
-    //   : !this.state.turnSpinner
-    //     ? <Login onlogin={this.handleLogin} />
-    //     : this.state.turnSpinner && <Spinner size={40} />
 
     return (
       <>
