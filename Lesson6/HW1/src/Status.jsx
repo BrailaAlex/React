@@ -4,22 +4,24 @@ import Offline from "./Offline";
 
 
 class Status extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOnline: false,
-    }
+  state = {
+    isOnline: false
   }
 
   onLog = () => {
-    if(!this.state.isOnline) {this.setState({
+    if (!this.state.isOnline) {
+      this.setState({
       isOnline: true
-    })}
+      })
+    }
   }
 
   render() {
-    return (this.state.isOnline ? <Online />
-      : <Offline login={this.onLog} />);
+    return (
+      !this.state.isOnline
+      ? <Offline login={this.onLog} />
+      : <Online />
+    );
   }
 }
 
