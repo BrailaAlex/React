@@ -7,13 +7,13 @@ class Auth extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isloggedIn: false,
+      isloggedIn: true,
     }
   }
 
   handleLogin = () => {
     this.setState({
-      isLoggedIn: true
+      isLoggedIn: false
     });
   }
 
@@ -24,7 +24,7 @@ class Auth extends React.Component {
   }
 
   render() {
-    const button = this.state.isLoggedIn
+    const button = !this.state.isLoggedIn
       ? <Logout onLogout={this.handleLogout} />
       : <Login onLogin={this.handleLogin} />;
     

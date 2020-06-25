@@ -8,7 +8,7 @@ class Auth extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    isLoggedIn: false,
+    isLoggedIn: true,
     turnSpinner: false
   }
   }
@@ -20,7 +20,7 @@ class Auth extends React.Component {
       })
     setTimeout(() => {
       this.setState({
-        isLoggedIn: true,
+        isLoggedIn: false,
         turnSpinner: false
       })
     }, 2000);
@@ -28,7 +28,7 @@ class Auth extends React.Component {
 
   handleLogout = () => {
       this.setState({
-      isLoggedIn: false
+      isLoggedIn: true
       })
   }
 
@@ -37,9 +37,8 @@ class Auth extends React.Component {
     return (
       <>
         {
-          this.state.isLoggedIn
-            ? !this.state.turnSpinner &&
-            <Logout onlogout={this.handleLogout} />
+          !this.state.isLoggedIn
+            ? <Logout onlogout={this.handleLogout} />
             : !this.state.turnSpinner &&
             <Login onlogin={this.handleLogin} />
         }
