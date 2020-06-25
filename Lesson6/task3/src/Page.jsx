@@ -8,13 +8,6 @@ class Page extends React.Component {
   state = {
       text: null
     }
-  
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     text: null
-  //   }
-  // }
 
   setText = text => {
     this.setState({
