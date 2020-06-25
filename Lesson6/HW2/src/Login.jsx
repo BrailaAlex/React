@@ -1,11 +1,12 @@
 import React from "react";
 
-const Online = () => {
+const Login = ({onlogin}) => {
   return (
-    <div className="status">
-      <span className="status__text">All good!</span>
-    </div>
+    <button
+      className="login btn"
+      onClick={onlogin}
+    >Login</button>
   );
 }
 
-export default Online;
+export default Login;

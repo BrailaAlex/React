@@ -1,14 +1,12 @@
 import React from "react";
 
-const Offline = ({ login }) => {
+const Logout = ({ onlogout }) => {
   return (
-    <div className="status">
-      <span className="status__text">Offline</span>
-      <button
-        onClick={login}
-        className="status__btn">Reconnect</button>
-    </div>
+    <button
+      onClick={onlogout}
+      className="logout btn"
+    >Logout</button>
   );
 }
 
-export default Offline;
+export default Logout;

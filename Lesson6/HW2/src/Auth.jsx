@@ -1,19 +1,28 @@
 import React from "react";
-import Online from "./Login";
-import Offline from "./Logout";
+import Logout from "./Logout";
+import Login from "./Login";
+import Spinner from "./Spinner";
 
 
 class Auth extends React.Component {
   state = {
-    isLoggedIn: true
+    isLoggedIn: false,
+    turnSpinner: false
   }
 
-  onLogin = () => {
-      this.setState({
-      isLoggedIn: true
+  handleLogin = () => {
+    this.setState({
+        turnSpinner: true
       })
+    setTimeout(() => {
+      this.setState({
+        isLoggedIn: true,
+        turnSpinner: false
+      })
+    }, 2000);
   }
-  onLogout = () => {
+
+  handleLogout = () => {
       this.setState({
       isLoggedIn: false
       })
@@ -21,9 +30,12 @@ class Auth extends React.Component {
 
   render() {
     return (
-      !this.state.isOnline
-      ? <Offline login={this.onLog} />
-      : <Online />
+      <>
+      {this.state.isLoggedIn
+      ? <Logout onlogout={this.handleLogout} />
+      : !this.state.turnSpinner && <Login onlogin={this.handleLogin} />}
+        {this.state.turnSpinner && <Spinner spinnerSize={40} />}
+        </>
     );
   }
 }
