@@ -18,10 +18,8 @@ class Status extends React.Component {
   }
 
   render() {
-    const statusTag = this.state.isOnline ? <Online />
-      : <Offline login={this.onLog} />;
-    // debugger;
-    return (statusTag)
+    return (this.state.isOnline ? <Online />
+      : <Offline login={this.onLog} />);
   }
 }
 
