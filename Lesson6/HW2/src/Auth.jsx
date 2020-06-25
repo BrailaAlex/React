@@ -38,7 +38,8 @@ class Auth extends React.Component {
       <>
         {
           this.state.isLoggedIn
-            ? <Logout onlogout={this.handleLogout} />
+            ? !this.state.turnSpinner &&
+            <Logout onlogout={this.handleLogout} />
             : !this.state.turnSpinner &&
             <Login onlogin={this.handleLogin} />
         }
