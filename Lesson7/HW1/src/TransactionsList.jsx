@@ -4,7 +4,7 @@ import Transaction from "./Transaction"
 const TransactionsList = ({ moves }) => {
   console.log(moves);
   return (
-  <ul className="transactions">
+    <ul className="transactions">
     {moves.map(transaction =>
       <li key={transaction.id} className="transaction">
       <Transaction {...transaction} />
