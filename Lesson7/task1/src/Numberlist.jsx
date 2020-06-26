@@ -13,4 +13,4 @@ import React from "react";
   )
 }
 
-export default NumberList;
+export default NumbersList;
