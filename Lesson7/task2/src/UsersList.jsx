@@ -1,7 +1,7 @@
 import React from "react";
 import User from './User';
 
-class UserList extends React.Component{
+class UsersList extends React.Component{
   state = {
   sorting: null
 }
@@ -26,8 +26,11 @@ class UserList extends React.Component{
           this.state.sorting === 'asc'
             ? (a.age - b.age)
             : (b.age - a.age))
+    } else {
+      usersList = [...this.props.users];
     }
-    usersList = [...this.props.users];
+    
+    console.log(usersList)
     
   return (
     <div>
@@ -47,4 +50,4 @@ class UserList extends React.Component{
 }
   
 }
-export default UserList;
+export default UsersList;
