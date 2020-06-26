@@ -46,6 +46,16 @@ const users = [
       age: 42,
       name: 'Samanta',
   },
+  {
+      id: 'id-8',
+      age: 52,
+      name: 'Brad',
+  },
+  {
+      id: 'id-9',
+      age: 42,
+      name: 'Samanta',
+  },
 ];
 
 ReactDOM.render(<UsersList users={users} />, rootElem);

@@ -22,7 +22,7 @@ class UsersList extends React.Component{
   };
 
   render() {
-    const totalitems = this.props.users.length;
+    const totalItems = this.props.users.length;
     const usersList = this.props.users
     const firstIndex = this.state.currentPage * this.state.itemsPerPage;
     const lastindex = firstIndex + this.state.itemsPerPage;
@@ -34,7 +34,7 @@ class UsersList extends React.Component{
         <div>
           <Pagination goPrev={this.getPrevPage}
             goNext={this.getNextPage}
-            totalitems={totalitems}
+            totalItems={totalItems}
             currentPage={this.state.currentPage}
             itemsPerPage={this.state.itemsPerPage}
           />
