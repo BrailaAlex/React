@@ -1,11 +1,11 @@
 import React from "react";
 import Transaction from "./Transaction"
 
-const TransactionsList = ({ moves }) => {
-  console.log(moves);
+const TransactionsList = ({ transactions }) => {
+  console.log(transactions);
   return (
     <ul className="transactions">
-    {moves.map(transaction =>
+    {transactions.map(transaction =>
       <li key={transaction.id} className="transaction">
       <Transaction {...transaction} />
     </li>)}

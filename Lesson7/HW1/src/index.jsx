@@ -32,4 +32,4 @@ const transactions = [
     },
 ];
 
-ReactDOM.render(<TransactionsList moves={transactions} />, rootElem);
+ReactDOM.render(<TransactionsList transactions={transactions} />, rootElem);
