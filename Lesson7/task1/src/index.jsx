@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-import Auth from "./Auth";
+import NumberList from './NumberList';
 
 const rootElem = document.querySelector("#root");
 
+const numbers = [1, 2, 3, 4, 5];
 
-
-ReactDOM.render(<Auth />, rootElem);
+ReactDOM.render(<NumberList numbers={numbers} />, rootElem);
