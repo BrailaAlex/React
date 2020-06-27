@@ -1,11 +1,17 @@
 import React from "react";
 import moment from 'moment'
 
+const setOffset = (offset) => {
+    return moment()
+      .utcOffset(offset)
+      .format("h:mm:ss a");
+  }
+
 class Clock extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      date: new Date(),
+      date: setOffset(this.props.offset),
     };
 
   }
@@ -13,7 +19,7 @@ class Clock extends React.Component {
   componentDidMount() {
     this.clockId = setInterval(() => {
           this.setState({
-            date: new Date()
+            date: setOffset(this.props.offset)
             })
         }, 1000);
   }
@@ -25,16 +31,14 @@ class Clock extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="clock">
         <div className="clock__location">
-        {this.props.location}
+        {this.props.date}
         </div>
         <div className="clock__time">
-        {moment(this.state.date)
-        .utcOffset(this.props.offset)
-        .format("h:mm:ss a")}
+        {this.state.date}
         </div>
-      </>
+      </div>
     )
   }
 }
