@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import moment from 'moment'
 
 const setOffset = (offset) => {
@@ -7,7 +7,7 @@ const setOffset = (offset) => {
       .format("h:mm:ss a");
   }
 
-class Clock extends React.Component {
+class Clock extends Component {
   constructor(props) {
     super(props);
 
