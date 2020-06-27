@@ -3,7 +3,7 @@ import React from "react";
 class Life extends React.Component {
   constructor(props) {
     super(props);
-    console.log('constructor: good place tocreate state');
+    console.log('constructor: good place to create state');
   }
 
   componentDidMount() {
@@ -11,7 +11,7 @@ class Life extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log('shouldComponentUpdate(nextProps, prevState): decide to render or not to render');
+    console.log('shouldComponentUpdate(nextProps, nextState): decide to render or not to render');
     return true;
   }
 
@@ -20,7 +20,7 @@ class Life extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log('componentWillUnmount(): cleanup before DOM related to component wil be removed');
+    console.log('componentWillUnmount(): cleanup before DOM related to component will be removed');
   }
 
   render() {
