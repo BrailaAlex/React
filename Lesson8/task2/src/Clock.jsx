@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import moment from 'moment'
+import moment from "moment";
 
 const formatTime = offset => {
   return moment()
@@ -37,7 +37,5 @@ class Clock extends Component {
     );
   }
 }
-
-export default Clock;
 
 export default Clock;
