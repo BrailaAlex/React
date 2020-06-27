@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    margin: 10px;
+    height: 32px;
+    color: #fff;
+    border-radius: 8px;
+    width: 64px;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 8px;
+    cursor: pointer;
+    background-color: green;
+}
+
+.number {
+    font-size: 42px;
+    font-weight: 600;
+    text-align: center;
+}
