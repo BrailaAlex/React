@@ -2,21 +2,20 @@ import React, { Component } from 'react';
 
 class UserForm extends Component {
 
-  handleSubmit = event => {
-    event.preventDefault();
-    const formData = [...new FormData(this.formRef)]
-      .reduce((acc, [name, value]) => ({ ...acc, [name]: value }), {});
-    console.log(formData);
-  }
-
   setRef = node => {
+    // console.log(node);
     this.formRef = node; 
   }
 
   render() {
     return (
       <form ref={this.setRef}
-        onSubmit={this.handleSubmit}
+        onSubmit={() => {
+          const formData = [...new FormData(this.formRef)]
+            .reduce((acc, [name, value]) =>
+              ({ ...acc, [name]: value }), {});
+          this.props.onSubmit(formData);
+        }}
         className="login-form">
   <h1 className="form-title">Profile</h1>
   <div className="form-control">
