@@ -10,7 +10,7 @@ class App extends Component {
 
   render() {
   return (
-    <UserForm handleSubmit={this.createUser} />
+    <UserForm onSubmit={this.createUser} />
   )
 } 
 }
