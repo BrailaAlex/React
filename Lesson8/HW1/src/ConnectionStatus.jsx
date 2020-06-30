@@ -24,6 +24,7 @@ class ConnectionStatus extends React.Component {
   
   
   render() {
+    console.log(this.props.children)
     const statusChange = this.state.status === "offline"
       ? "status_offline"
       : "";
