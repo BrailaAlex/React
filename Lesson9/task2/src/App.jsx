@@ -3,7 +3,7 @@ import UserForm from './UserForm.jsx'
 
 class App extends Component {
   
-  createUser = (userArr, event) => {
+  createUser(userArr) {
     event.preventDefault();
     console.log(userArr);
   };
