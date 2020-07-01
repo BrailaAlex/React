@@ -16,28 +16,27 @@ class UsersList extends Component {
 
   render() {
     const users = this.props.users;
-    console.log(users);
     const resultUsersList = (this.state.value === '')
       ? users.map(
         user => <User key={user.id}
           name={user.name}
           age={user.age} />
       )
-      : users.filter(user => user.name.includes(this.state.value))
-              .map(
-                  user => <User key={user.id}
-                    name={user.name}
-                  age={user.age} />
-              )
-      
+      : users.filter(user => user.name.toLowerCase()
+        .includes(this.state.value.toLowerCase()))
+        .map(
+          user => <User key={user.id}
+            name={user.name}
+            age={user.age} />
+        );
     return (
       <>
         <Filter
           filterText={this.state.value}
-          count={users.lengt}
+          count={resultUsersList.length}
           onChange={this.handleChange}
         />
-        <ul class="users">
+        <ul className="users">
           {resultUsersList}
         </ul>
       </>

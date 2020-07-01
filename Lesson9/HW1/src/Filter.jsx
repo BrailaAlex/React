@@ -4,6 +4,7 @@ class Filter extends Component {
 
   render() {
     const { filterText, count, onChange } = this.props;
+    console.log(count);
   return (
     <div className="filter">
     <span className="filter__count">{count}</span>
