@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-const UserProfile = (props) => {
-    if (!props.userData) {
+const UserProfile = ({userData}) => {
+    if (!userData) {
       return null;
     }
-    const { name, location, avatar_url } = props.userData;
+    const { name, location, avatar_url } = userData;
     return (
     <div className="user">
         <img

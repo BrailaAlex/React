@@ -1,7 +1,7 @@
 import React from "react";
 
 const UserMenu = ({ userData }) => {
-  if (!props.userData) {
+  if (!userData) {
       return null;
     }
   const { avatar_url, name } = userData;
