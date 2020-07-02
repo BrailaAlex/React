@@ -1,6 +1,9 @@
 import React from "react";
 
-const UserMenu = ({userData}) => {
+const UserMenu = ({ userData }) => {
+  if (!props.userData) {
+      return null;
+    }
   const { avatar_url, name } = userData;
   return (
     <div className="menu">

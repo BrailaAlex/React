@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
 const UserProfile = (props) => {
-  // debugger;
-  //   if (!props.userData) {
-  //     return null;
-  //   }
+    if (!props.userData) {
+      return null;
+    }
     const { name, location, avatar_url } = props.userData;
     return (
     <div className="user">
