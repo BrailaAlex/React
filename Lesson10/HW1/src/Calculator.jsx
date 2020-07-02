@@ -3,26 +3,19 @@ import BoilingVerdict from './BoilingVerdict';
 import TemperatureInput from './TemperatureInput';
 
 class Calculator extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
+    state = {
       temperature: '',
       scale: 'c'
-    },
-      this.handleCelsiusChange =
-      this.handleCelsiusChange.bind(this);
-      this.handleFahrenheitChange =
-      this.handleFahrenheitChange.bind(this);
-  }
+    }
 
-  handleCelsiusChange(temperature) {
+  handleCelsiusChange = (temperature) => {
     this.setState({
       scale: 'c',
       temperature
     })
   };
 
-  handleFahrenheitChange(temperature) {
+  handleFahrenheitChange = (temperature) => {
     this.setState({
       scale: 'f',
       temperature
