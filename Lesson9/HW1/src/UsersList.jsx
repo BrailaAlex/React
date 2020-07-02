@@ -11,19 +11,14 @@ class UsersList extends Component {
     this.setState({
       value: e.target.value
     })
-    console.log(this.state.value);
   }
 
   render() {
     const users = this.props.users;
-    const resultUsersList = (this.state.value === '')
-      ? users.map(
-        user => <User key={user.id}
-          name={user.name}
-          age={user.age} />
-      )
+    const resultUsersList = (this.state.value === ''
+      ? users
       : users.filter(user => user.name.toLowerCase()
-        .includes(this.state.value.toLowerCase()))
+        .includes(this.state.value.toLowerCase())))
         .map(
           user => <User key={user.id}
             name={user.name}
