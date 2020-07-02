@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserForm = ( {userData, handleChange} ) => {
+const UserForm = ({userData, handleChange}) => {
     return (
       <form className="user-form">
         <input
