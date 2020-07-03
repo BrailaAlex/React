@@ -1,38 +1,32 @@
 import React from 'react';
-import UserProfile from './UserProfile';
-import UserMenu from './UserMenu';
+import Dialog from './Dialog';
 
-class Page extends React.Component {
+class App extends React.Component {
   state = {
-    userData: null
+    isOpen: true,
   };
 
-  componentDidMount() {
-    this.fetchUserData(this.props.userId);
+  hideDialog = (e) => {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    })
   }
 
-  fetchUserData = userId => {
-    const userUrl = `https://api.github.com/users/${userId}`;
-    fetch(userUrl)
-      .then(response => response.json())
-      .then(userData =>
-      {
-        this.setState({
-          userData,
-        })
-      },
-      );
-  }
+
   render() {
     return (
-        <div className="page">
-          <header className="header">
-            <UserMenu userData={this.state.userData} />
-          </header>
-          <UserProfile userData={this.state.userData} />
-        </div>
+  <div className="app">
+        <button
+          onClick={this.hideDialog}
+          className="btn">Show dialog</button>
+        { this.state.isOpen && <Dialog onClose={this.hideDialog} title="Recommendation">
+          <p>Use immutable array methods
+      to work with data. It will help to avoid bugs</p>
+          </Dialog>
+        }
+  </div>
       );
   }
 };
 
-export default Page;
+export default App;
