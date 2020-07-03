@@ -1,6 +1,9 @@
 import React from "react";
 
-const UserMenu = ({ children, title, onClose}) => {
+const UserMenu = ({ children, title, onClose, isOpen }) => {
+  if (!isOpen) {
+    return null;
+  }
   console.log(children);
   return (
     <div className="dialog">
