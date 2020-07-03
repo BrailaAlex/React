@@ -8,7 +8,13 @@ class App extends React.Component {
 
   hideDialog = (e) => {
     this.setState({
-      isOpen: !this.state.isOpen,
+      isOpen: false,
+    })
+  }
+
+  showDialog = (e) => {
+    this.setState({
+      isOpen: true,
     })
   }
 
@@ -17,7 +23,7 @@ class App extends React.Component {
     return (
   <div className="app">
         <button
-          onClick={this.hideDialog}
+          onClick={this.showDialog}
           className="btn">Show dialog</button>
         { this.state.isOpen && <Dialog onClose={this.hideDialog} title="Recommendation">
           <p>Use immutable array methods
