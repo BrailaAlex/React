@@ -6,7 +6,7 @@ class App extends React.Component {
     isOpen: false,
   };
 
-  hideDialog = (e) => {
+  onToggleDialog = (e) => {
     this.setState({
       isOpen: !this.state.isOpen,
     })
@@ -17,11 +17,11 @@ class App extends React.Component {
     return (
   <div className="app">
         <button
-          onClick={this.hideDialog}
+          onClick={this.onToggleDialog}
           className="btn">Show dialog</button>
         {this.state.isOpen && <Dialog
           isOpen={this.state.isOpen}
-          onClose={this.hideDialog}
+          onClose={this.onToggleDialog}
           title="Recommendation">
           <p>Use immutable array methods
       to work with data. It will help to avoid bugs</p>
