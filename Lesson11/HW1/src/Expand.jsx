@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
-const Expand = ({ isOpen, children, title, onToggleContent }) => {
+const Expand = ({ isOpen, children, title, onClose }) => {
   
    let content;
   let arrowDirection = "down";
@@ -16,7 +16,7 @@ const Expand = ({ isOpen, children, title, onToggleContent }) => {
     <div className="expand border">
       <div className="expand__header">
         <span className="expand__title">{title}</span>
-        <button className="expand__toggle-btn" onClick={onToggleContent}>
+        <button className="expand__toggle-btn" onClick={onClose}>
           {isOpen ? <FontAwesomeIcon icon={faChevronUp} />
            : <FontAwesomeIcon icon={faChevronDown} />}
         </button>
