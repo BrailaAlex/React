@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import withDataLoader from './withDataLoader';
 
 const City = ({ data }) => {
     const { name, temperature } = data;
+    console.log(name)
 
     return (
         <div className="city">
@@ -19,4 +21,5 @@ City.propTypes = {
     }).isRequired,
 };
 
-export default City;
+export default withDataLoader(
+  'https://5e5cf5eb97d2ea0014796f01.mockapi.io/api/v1/cities/1', City);

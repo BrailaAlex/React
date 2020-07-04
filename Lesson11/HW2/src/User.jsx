@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
+import withDataLoader from './withDataLoader';
 
 const User = ({ data }) => {
     const { name, location, avatar_url } = data;
@@ -24,4 +25,4 @@ User.propTypes = {
     }).isRequired,
 };
 
-export default User;
+export default withDataLoader('https://api.github.com/users/octocat',User);;
