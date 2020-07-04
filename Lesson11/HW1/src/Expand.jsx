@@ -1,9 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 const Expand = ({ isOpen, children, title, onToggleContent }) => {
-  const arrowDrctn = isOpen ? 'Up' : 'Down';
   
    return (
     <div className="expand border">
@@ -29,7 +29,7 @@ const Expand = ({ isOpen, children, title, onToggleContent }) => {
 
 Expand.propTypes = {
   isOpen: PropTypes.bool,
-  children: PropTypes.number.isRequired,
+  children: PropTypes.element.isRequired,
   title: PropTypes.string,
   onToggleContent: PropTypes.func.isRequired
 };
