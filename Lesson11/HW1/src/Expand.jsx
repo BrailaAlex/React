@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+// import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
 const Expand = ({ isOpen, children, title, onClose }) => {
   let content;
