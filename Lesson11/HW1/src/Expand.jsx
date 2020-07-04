@@ -3,10 +3,8 @@ import PropTypes from "prop-types";
 
 const Expand = ({ isOpen, children, title, onClose }) => {
   let content;
-  let arrowDirection = "down";
   if (isOpen) {
-    content = <div className="expand__content">{children}</div>;
-    arrowDirection = "up";
+    content = <div className="expand__content">{children}</div>
   }
 
   return (
@@ -14,7 +12,7 @@ const Expand = ({ isOpen, children, title, onClose }) => {
       <div className="expand__header">
         <span className="expand__title">{title}</span>
         <button className="expand__toggle-btn" onClick={onClose}>
-          {isOpen ? '🔼' : '🔽'}
+          <i className="fas fa-chevron-up" aria-hidden="true">{isOpen ? '^' : '>'}</i>
         </button>
       </div>
       {content}
