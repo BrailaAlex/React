@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
 const Expand = ({ isOpen, children, title, onClose }) => {
   let content;
@@ -14,7 +16,8 @@ const Expand = ({ isOpen, children, title, onClose }) => {
       <div className="expand__header">
         <span className="expand__title">{title}</span>
         <button className="expand__toggle-btn" onClick={onClose}>
-          <i className={`fas fa-chevron-${arrowDirection}`}></i>
+          <FontAwesomeIcon icon={faChevronUp} />
+          <i className={`fa-chevron-${arrowDirection}`} />
         </button>
       </div>
       {content}
