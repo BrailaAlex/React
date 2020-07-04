@@ -16,7 +16,7 @@ const Expand = ({ isOpen, children, title, onClose }) => {
       <div className="expand__header">
         <span className="expand__title">{title}</span>
         <button className="expand__toggle-btn" onClick={onClose}>
-          <FontAwesomeIcon icon={faChevronUp} />
+          {/* <FontAwesomeIcon icon={faChevronUp} /> */}
           <i className={`fa-chevron-${arrowDirection}`} />
         </button>
       </div>
