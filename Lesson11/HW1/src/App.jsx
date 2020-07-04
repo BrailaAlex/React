@@ -2,7 +2,7 @@ import React from 'react';
 import Expand from './Expand';
 
 
-class App extends React.Component {
+class Page extends React.Component {
   state = {
     isOpen: false
   };
