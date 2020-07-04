@@ -12,7 +12,7 @@ const Expand = ({ isOpen, children, title, onClose }) => {
       <div className="expand__header">
         <span className="expand__title">{title}</span>
         <button className="expand__toggle-btn" onClick={onClose}>
-          <i className="fas fa-chevron-up" aria-hidden="true">{isOpen ? '^' : '>'}</i>
+          <i class="fas fa-chevron-up">{isOpen ? '∧' : '∨'}</i>
         </button>
       </div>
       {content}
