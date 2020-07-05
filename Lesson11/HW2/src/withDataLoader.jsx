@@ -30,6 +30,8 @@ const withDataLoader = (sourceUrl, WrappedComponent) => {
       )
     }
   }
+
+  withDataLoader.displayName = `withDataLoader(${WrappedComponent.displayName || WrappedComponent.name || 'WrappedComponent'})`;
   return withDataLoader;
 };
 

@@ -14,6 +14,8 @@ class App extends React.Component {
 
 
   render() {
+  const element = <p>Use immutable array methods
+      to work with data. It will help to avoid bugs</p>
     return (
   <div className="app">
         <button
@@ -23,8 +25,7 @@ class App extends React.Component {
           isOpen={this.state.isOpen}
           onClose={this.onToggleDialog}
           title="Recommendation">
-          <p>Use immutable array methods
-      to work with data. It will help to avoid bugs</p>
+          {element}
           </Dialog>
         }
   </div>

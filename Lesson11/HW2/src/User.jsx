@@ -24,5 +24,6 @@ User.propTypes = {
         avatar_url: PropTypes.string.isRequired,
     }).isRequired,
 };
+const SuperUser = withDataLoader('https://api.github.com/users/octocat',User);
 
-export default withDataLoader('https://api.github.com/users/octocat',User);;
+export default SuperUser;
