@@ -1,105 +1,59 @@
 import React from "react";
 import Task from "./Task";
-import CreateTask from "./CreateTask";
+import CreateTask from "./CreateTaskInput";
+import { createTask, fetchTasksList, updateTask, deleteTask} from "./tasksGateway";
 
-const tasks = [{ text: 'Learn React', done: false, id: 1 },
-{ text: 'Lear HTML / CSS', done: false, id: 2 },
-{ text: 'Learn JavaScript', done: true, id: 3 },
-{ text: 'Learn Dev Tools', done: true, id: 4 },];
-
-const sourceUrl = 'https://5ee220bb8b27f3001609462e.mockapi.io/api/v1/tasks';
+const tasks = [
+  { text: 'Learn React', done: false, id: 1 },
+  { text: 'Learn HTML / CSS', done: false, id: 2 },
+  { text: 'Learn JavaScript', done: true, id: 3 },
+  { text: 'Learn Dev Tools', done: true, id: 4 },
+];
 
 class TasksList extends React.Component {
   state = {
     tasks: [],
   }
 
+  componentDidMount() {
+    this.fetchTasks();
+  }
+
+  fetchTasks = () => {
+    fetchTasksList()
+      .then(tasksList => this.setState({
+        tasks: tasksList
+      }));
+  }
+
   onCreateTask = (text) => {
     if (text.length > 0) {
       const newTask = {
         text,
-        done: false,
-        id: this.state.tasks.length + 1
+        done: false
       };
-      fetch(sourceUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newTask)
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Failed to create task");
-          }
-          return this.fetchTasksData()
-        });
-          }  
+      return createTask(newTask)
+        .then(() => this.fetchTasks())
+    }  
     };
 
-  onDeleateTask = (id) => {
-    const deletedTask = this.state.tasks
-      .filter(task => task.id === id);
-    
-    fetch(`${sourceUrl}/${id}`, {
-      method: "DELETE",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(deletedTask)
-    })
-      .then((response) => {
-      if (!response.ok) {
-        throw new Error("Failed to delete task");
-      }
-      return this.fetchTasksData()
-    })
-  }
+  onDeleateTask = (id) => deleteTask(id).then(() => this.fetchTasks());
 
-  onToggleTaskStatus = (id) => {
-        this.state.tasks
-          .map(task => {
-          const finishDate = task.done ? new Date() : null 
-          if (task.id === id) {
-            const changedTask = {
-              ...task,
-              done: !task.done,
-              finishDate
-            };
-            return fetch(`${sourceUrl}/${id}`, {
-              method: "PUT",
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(changedTask)
-            }).then((response) => {
-          if (!response.ok) {
-            throw new Error("Failed to toggle task");
-          }
-          return this.fetchTasksData()
-        });
-      };
-    });
-  }
-
-  fetchTasksData = () => {
-    return fetch(sourceUrl)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Failed to fetch');
-      }
-      return response.json();
-    })
-      .then(data => {
-        this.setState({
-          tasks: data
-        });
-        }
-        )
-      }
+  handleTaskStatusChange = (id) => {
+    const { done, text } = this.state.tasks
+      .find(task => task.id === id)
+    const updatedTask = {
+              text,
+              done: !done,
+              finishDate: (done ? new Date() : null)
+    };
+    return updateTask(id, updatedTask).then(() => this.fetchTasks());
+  };
 
   render() {
-    this.fetchTasksData();
+    if (!this.state.tasks) {
+      return null;
+    }
     const sortedList = [...this.state.tasks]
       .sort((a, b) => {
         if (a.done - b.done !== 0) {
@@ -121,7 +75,7 @@ class TasksList extends React.Component {
             sortedList.map(
               task =>
                 <Task key={task.id} {...task}
-                  onToggleTask={this.onToggleTaskStatus}
+                  onToggleTask={this.handleTaskStatusChange}
                   onDelete={this.onDeleateTask}
                 />
             )
