@@ -58,8 +58,7 @@ class TasksList extends React.Component {
       .sort((a, b) => {
         if (a.done - b.done !== 0) {
         return a.done - b.done;
-        };
-    if (a.done) {
+        } if (a.done && b.done) {
         return new Date(b.finishDate) - new Date(a.finishDate);
     }
     return new Date(b.createDate) - new Date(a.createDate);
@@ -68,7 +67,7 @@ class TasksList extends React.Component {
       <main className="todo-list">
         <CreateTask
           value={this.state.CreateTaskValue}
-          onCreateTask={this.onCreateTask}
+          createTask={this.onCreateTask}
         />
         <ul className="list">
           {

@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 const Task = ({id, done, text, onToggleTask, onDelete}) => {
   return (
@@ -16,5 +17,18 @@ const Task = ({id, done, text, onToggleTask, onDelete}) => {
     </li>
   );
 };
+
+Task.propTypes = {
+  id: PropTypes.string.isRequired,
+  done: PropTypes.bool,
+  text: PropTypes.string,
+  onToggleTask: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired
+};
+
+Task.defaultProps = {
+  done: false,
+  text: ''
+}
 
 export default Task;
