@@ -50,9 +50,6 @@ class TasksList extends React.Component {
   };
 
   render() {
-    if (!this.state.tasks) {
-      return null;
-    }
     const sortedList = this.state.tasks.slice()
       .sort((a, b) => a.done - b.done);
     return (
