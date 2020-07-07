@@ -54,15 +54,8 @@ class TasksList extends React.Component {
     if (!this.state.tasks) {
       return null;
     }
-    const sortedList = [...this.state.tasks]
-      .sort((a, b) => {
-        if (a.done - b.done !== 0) {
-        return a.done - b.done;
-        } if (a.done && b.done) {
-        return new Date(b.finishDate) - new Date(a.finishDate);
-    }
-    return new Date(b.createDate) - new Date(a.createDate);
-    });
+    const sortedList = this.state.tasks.slice()
+      .sort((a, b) => a.done - b.done);
     return (
       <main className="todo-list">
         <CreateTask
