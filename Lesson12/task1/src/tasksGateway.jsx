@@ -31,12 +31,12 @@ export const updateTask = (taskId, taskData) => {
   return fetch(`${sourceUrl}/${taskId}`, {
     method: "PUT",
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json; utc-8'
     },
     body: JSON.stringify(taskData)
   }).then((response) => {
     if (!response.ok) {
-      throw new Error("Failed to toggle task");
+      throw new Error("Failed to create task");
     }
   });
 };
