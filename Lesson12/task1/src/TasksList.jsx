@@ -37,7 +37,7 @@ class TasksList extends React.Component {
     }  
     };
 
-  onDeleateTask = (id) => deleteTask(id).then(() => this.fetchTasks());
+  handleTaskDelete = (id) => deleteTask(id).then(() => this.fetchTasks());
 
   handleTaskStatusChange = (id) => {
     const { done, text } = this.state.tasks
@@ -68,7 +68,7 @@ class TasksList extends React.Component {
               task =>
                 <Task key={task.id} {...task}
                   onToggleTask={this.handleTaskStatusChange}
-                  onDelete={this.onDeleateTask}
+                  onDelete={this.handleTaskDelete}
                 />
             )
           }
