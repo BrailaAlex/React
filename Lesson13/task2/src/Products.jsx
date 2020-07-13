@@ -1,6 +1,6 @@
 import React from "react";
 import Product from "./Product";
-import { Route, Link, Switch, useParams } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 
 const Products = ({ match }) => {
   return (
