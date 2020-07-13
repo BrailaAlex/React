@@ -4,9 +4,8 @@ import { useParams } from 'react-router-dom';
 
 const Product = ({match}) => {
   // const { productId } = useParams();
-  const productId = match.params.productId;
   return (
-    <div className="product">{`Product is a ${productId}`}</div>
+    <div className="product">{`Product is a ${match.params.productId}`}</div>
   )
 };
 
