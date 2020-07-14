@@ -5,7 +5,7 @@ const PageNotFound = () => {
   return (
     <div className="page__content">
       <h1>😢</h1>
-      <Link to="">Go home</Link>
+      <Link to="/">Go home</Link>
     </div>
   )
 };
