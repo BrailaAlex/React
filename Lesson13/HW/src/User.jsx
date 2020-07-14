@@ -8,19 +8,16 @@ class User extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
     this.fetchUserInfo(this.props.match.params.userId)
   }
 
   componentDidUpdate(prevProp) {
-    debugger;
     if (this.props.match.params.userId !== prevProp.match.params.userId) {
       this.fetchUserInfo(this.props.match.params.userId);
     }
   }
 
   fetchUserInfo = (userData) => {
-    debugger;
     fetch(`https://api.github.com/users/${userData}`)
       .then(response => response.json())
       .then(userInfo => {
@@ -32,8 +29,6 @@ class User extends React.Component {
       });
   }
   render() {
-    console.log(this.state)
-    debugger;
     const { avatarUrl, name, location } = this.state;
     if (!avatarUrl || !name || !location) {
       return null
