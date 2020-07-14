@@ -8,41 +8,45 @@ class User extends React.Component {
   }
 
   componentDidMount() {
+    debugger;
     this.fetchUserInfo(this.props.match.params.userId)
   }
 
-  shouldComponentUpdate(nextProps) {
-    return nextProps.match.params.userId !== this.props.match.params.userId
+  componentDidUpdate(prevProp) {
+    debugger;
+    if (this.props.match.params.userId !== prevProp.match.params.userId) {
+      this.fetchUserInfo(this.props.match.params.userId);
+    }
   }
 
   fetchUserInfo = (userData) => {
-    return fetch(`https://api.github.com/users/${userData}`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch users info")
-        };
-        return response.json();
-      })
+    debugger;
+    fetch(`https://api.github.com/users/${userData}`)
+      .then(response => response.json())
       .then(userInfo => {
-        this.setState({
+        return this.setState({
           avatarUrl: userInfo.avatar_url,
           name: userInfo.name,
           location: userInfo.location,
-        })
-          .catch(error => alert(error));
-      })
+        });
+      });
   }
   render() {
+    console.log(this.state)
+    debugger;
     const { avatarUrl, name, location } = this.state;
-  return (
-    <div className="user">
-      <img alt="User Avatar" src={avatarUrl} className="user__avatar" />
-      <div className="user__info">
-        <span className="user__name">{name}</span>
-        <span className="user__location">{location}</span>
-      </div>
-    </div>
-  );
+    if (!avatarUrl || !name || !location) {
+      return null
+    }
+      return (
+        <div className="user">
+          <img alt="User Avatar" src={avatarUrl} className="user__avatar" />
+          <div className="user__info">
+            <span className="user__name">{name}</span>
+            <span className="user__location">{location}</span>
+          </div>
+        </div>
+      );
   }
 };
 
