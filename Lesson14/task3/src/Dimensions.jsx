@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const Dimensions = () => {
-  const [dimetions, setDimensions] = useState({
+  const [dimensions, setDimensions] = useState({
     width: null,
     height: null
   });
@@ -19,9 +19,8 @@ const Dimensions = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  console.log(dimetions);
-  const { width, height } = dimetions;
+  console.log(dimensions);
+  const { width, height } = dimensions;
 
   return <div className="dimensions">{`${width}px - ${height}px`}</div>;
 };
