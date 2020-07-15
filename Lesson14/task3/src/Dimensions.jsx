@@ -20,7 +20,7 @@ const Dimensions = () => {
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [innerWidth, innerHeight]);
+  }, []);
   const { width, height } = dimensions;
     return(
       <div className="dimensions">{`${width}px ${height}px`}</div>
