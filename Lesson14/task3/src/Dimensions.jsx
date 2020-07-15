@@ -10,10 +10,15 @@ const Dimensions = () => {
   useEffect(() => {
     const { innerWidth, innerHeight } = window;
     setDimensions({ width: innerWidth, height: innerHeight });
-    window.addEventListener('resize', () => setDimensions({ width: innerWidth, height: innerHeight }));
+
+    const handleResize = event => {
+      const { innerHeight, innerWidth } = event.target;
+      setDimensions({ width: innerWidth, height: innerHeight });
+    }
+      window.addEventListener('resize', handleResize);
+      
     return () => {
-      debugger;
-      window.removeEventListener('resize', () => setDimensions({ width: innerWidth, height: innerHeight }))
+      window.removeEventListener('resize', handleResize)
     }
   }, [innerWidth, innerHeight]);
   const { width, height } = dimensions;
