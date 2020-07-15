@@ -1,30 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
 
 const Dimensions = () => {
-  const [dimensions, setDimensions] = useState({
+  const [dimetions, setDimensions] = useState({
     width: null,
-    height: null,
+    height: null
   });
 
   useEffect(() => {
     const { innerWidth, innerHeight } = window;
     setDimensions({ width: innerWidth, height: innerHeight });
-
     const handleResize = event => {
       const { innerHeight, innerWidth } = event.target;
       setDimensions({ width: innerWidth, height: innerHeight });
-    }
-      window.addEventListener('resize', handleResize);
-      
+    };
+    window.addEventListener("resize", handleResize);
+
     return () => {
-      window.removeEventListener('resize', handleResize)
-    }
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
-  const { width, height } = dimensions;
-    return(
-      <div className="dimensions">{`${width}px ${height}px`}</div>
-    )
+
+  console.log(dimetions);
+  const { width, height } = dimetions;
+
+  return <div className="dimensions">{`${width}px - ${height}px`}</div>;
 };
 
 export default Dimensions;
