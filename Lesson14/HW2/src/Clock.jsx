@@ -10,7 +10,7 @@ const Clock = ({ location, offset }) => {
       clearInterval(intervalId);
     }
     
-  }, []);
+  }, [time]);
   
   const currentTime = time.utcOffset(offset).format('h:mm:ss a');
   return (
