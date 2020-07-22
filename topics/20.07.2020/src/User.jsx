@@ -10,7 +10,7 @@ class User extends React.PureComponent {
     }
 
     fetchUserData = () => {
-        fetch(`https://api.github.com/users/${this.props.userId}`)
+        fetch(`https://api.github.com/users/${this.props.match.params.userId}`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Oops');
@@ -22,12 +22,14 @@ class User extends React.PureComponent {
                 userData: data,
             })
         })
-}
+    }
+    
     componentDidMount() {
         this.fetchUserData();
     }
+
     componentDidUpdate(prevProps) {
-        if (this.props.userId !== prevProps.userId) {
+        if (prevProps.match.params.userId !== this.props.match.params.userId) {
             this.fetchUserData();
         }
     }

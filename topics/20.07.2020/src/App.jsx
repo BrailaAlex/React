@@ -1,18 +1,26 @@
 import React from 'react';
+import { Link, Route } from 'react-router-dom';
 import Users from './Users';
+import Home from './Home';
+import './index.scss'
 
 const App = () => {
     return (
         <div className="page">
             <ul className="navigation">
                 <li className="navigation__item">
-                    <a href="/">Home</a>
+                    <Link to="/">Home</Link>
                 </li>
                 <li className="navigation__item">
-                    <a href="/users">Users</a>
+                    <Link to="/users">Users</Link>
                 </li>
-        </ul>
-        <Users />
+            </ul>
+            <Route exact path="/">
+                <Home />
+            </Route>
+            <Route path="/users">
+                <Users /> 
+            </Route>
         </div>
     );
 };
